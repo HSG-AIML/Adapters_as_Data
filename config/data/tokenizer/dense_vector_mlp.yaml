@@ -1,0 +1,6 @@
+tokenizer_class: vector
+tokensize: 99648
+device: "cpu"
+mode: "full_model"
+padding: "zero"
+vector_key: "vector"

@@ -1,0 +1,9 @@
+class: "LoRAWeightsDataset"        # The class to use
+drop_nan: True                     # Whether to drop adapter with NaN values
+max_adapters: 8192                 # Maximum number of adapters to load, ignored if null
+max_absolute_weight: null          # The maximum allowed absolute weight, ignored if null
+dtype: "float32"
+rank_label: 1                      # Rank label for combined training
+
+# File of the LoRA weights to load (rank 1 padded to rank 2 size)
+weights_path: "${hydra:runtime.cwd}/data/all_weights_r1_padded.pt"

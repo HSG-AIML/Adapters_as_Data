@@ -1,0 +1,2 @@
+class: "MSEReconstructionLoss"
+normalize: "batch"                 # What kind of normalization to use for the MSE reconstruction loss

@@ -1,0 +1,18 @@
+class: "CombinedLoRAWeightsDataset"  # Combined dataset class
+
+datasets:
+  - class: "LoRAWeightsDataset"
+    drop_nan: True
+    max_adapters: 8192
+    max_absolute_weight: null
+    dtype: "float32"
+    rank_label: 1
+    weights_path: "${hydra:runtime.cwd}/data/all_weights_r1_padded.pt"
+
+  - class: "LoRAWeightsDataset"
+    drop_nan: True
+    max_adapters: 8192
+    max_absolute_weight: null
+    dtype: "float32"
+    rank_label: 2
+    weights_path: "${hydra:runtime.cwd}/data/all_weights_r2.pt"

@@ -1,0 +1,7 @@
+window_size: 312                                  # Size of windows to cut from tokenized sequences.
+num_windows_per_model: 1                          # Number of windows to sample per model. Can be an integer or "auto" for full coverage.
+num_windows_per_layer: null                       # Optional limit on number of windows per layer, ignored if null.
+pad_windows: True                                 # Whether to pad windows smaller than window_size with padding tokens.
+allow_overlapping_windows: False                  # Whether to allow overlapping windows
+window_distribution_strategy: "consecutive"       # Strategy for distributing non-overlapping windows. Options: "consecutive" (start from beginning), "distributed" (spread across sequence).
+cache_dir: "/local/cache/tokens"                  # Cache directory (null = default ~/.sane/cache/tokens)

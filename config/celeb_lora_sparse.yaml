@@ -1,0 +1,30 @@
+# Experiment configuration
+trainer: "SANETrainer"        # Which SANETrainer class to use
+device: "cuda"                # Device on which the experiment is run
+seed: 2020                    # Random seed for reproducibility
+monitor_memory: True          # Whether to output the memory usage during the training of the SANE model
+epochs: 1000                  # Number of training epochs
+validation_frequency: 50      # At which frequency (in epochs) to run a validation step
+checkpoint_frequency: 50      # At which frequency (in epochs) to save a checkpoint
+view_1_canon_train: false     # Whether to use the canonical view as the input, at training. When not using the contrastive learning framework, this should almost always be false.
+view_1_canon_valid: true      # Whether to use the canonical view as the input, at validation
+
+# AMP configuration
+use_amp: false                # Whether to use automatic mixed precision training
+amp_dtype: "float16"          # AMP dtype: "float16" or "bfloat16" (bfloat16 has better numerical stability on newer GPUs)
+max_grad_norm: 10             # Maximum gradient norm for gradient clipping (null = disabled)
+
+# Experiment name
+experiment_name: "sparse_l256_d768_h12_l6"
+
+# Root directory
+root_dir: ???
+
+defaults:
+  - _base_
+  - _self_
+  - data: celeb_lora_sparse
+  - loss: reconstruction
+  - model: sane_medium_sparse
+  - optimizer: adamw
+  - scheduler: onecyclelr

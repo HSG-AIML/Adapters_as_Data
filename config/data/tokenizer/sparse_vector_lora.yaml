@@ -1,0 +1,7 @@
+tokenizer_class: sparse_vector
+tokensize: 768
+device: "cpu"
+mode: "full_model"
+padding: "zero"
+vector_key: "vector"
+weight_dimensions_file: "${hydra:runtime.cwd}/data/weight_dimensions.pt"

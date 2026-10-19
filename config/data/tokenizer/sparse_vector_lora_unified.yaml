@@ -1,0 +1,7 @@
+tokenizer_class: sparse_vector
+tokensize: 640                     # 2 × 320, unified token size for rank 1 + rank 2
+device: "cpu"
+mode: "full_model"
+padding: "zero"
+vector_key: "vector"
+weight_dimensions_file: "${hydra:runtime.cwd}/data/weight_dimensions_unified.pt"

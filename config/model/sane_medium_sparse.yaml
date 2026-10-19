@@ -1,0 +1,12 @@
+input_dim: ${data.tokenizer.tokensize}  # Derived from tokenizer tokensize via Hydra interpolation
+latent_dim: 256                         # Dimension of the latent tokens
+n_tokens: "auto"                        # Number of input tokens (usually, should be equivalent to the window size)
+max_positions: "auto"                   # Maximum number of positions (tokens) in the input position embeddings
+decoder: "symmetric"                    # Decoder architecture. If "symmetric", uses the same architecture as the encoder. Otherwise, please provide a config (see config/model/decoder/)
+
+defaults:
+  - _self_
+  - encoder: transformer_sparse
+  - projector: mlp
+  - embedder: average
+  - translator: null

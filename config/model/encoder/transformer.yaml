@@ -1,0 +1,7 @@
+architecture: "transformer"             # Architecture type
+transformer_type: "gpt"                 # Type of transformer to use (e.g., "gpt" for GPT-style)
+d_model: 1024                           # Internal token dimension of the transformer model
+nhead: 16                               # Number of attention heads in the transformer
+num_layers: 8                           # Number of layers in the transformer
+dropout: 0.15                           # Dropout rate
+position_embedding: "learned"           # Type of position embedding to use

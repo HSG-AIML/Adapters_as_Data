@@ -1,0 +1,7 @@
+architecture: "transformer"             # Architecture type
+transformer_type: "gpt"                 # Type of transformer to use (e.g., "gpt" for GPT-style)
+d_model: 640                            # Matches unified tokensize
+nhead: 10                               # 640 / 10 = 64 per head (must divide d_model evenly)
+num_layers: 6                           # Number of layers in the transformer
+dropout: 0.1                            # Dropout rate
+position_embedding: "learned"           # Type of position embedding to use

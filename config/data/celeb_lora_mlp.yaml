@@ -1,0 +1,16 @@
+tokensize: 99648                            # Target token size for input sequences
+split:                                      # Proportions for train/validation/test splits
+  train: 0.7
+  val: 0.15
+  test: 0.15
+splitter: "RandomSplitter"                  # Strategy for splitting the dataset
+batch_size: 64                              # Batch size
+num_workers: 0                              # Number of worker processes for data loading
+drop_last: False                            # Whether to drop the last incomplete batch
+prefetch_factor: null
+pin_memory: False                           # Whether to pin memory during data loading
+defaults:
+  - _self_
+  - checkpoints_dataset: celeb_lora_mlp
+  - tokenizer: dense_vector_mlp
+  - tokens_dataset: single_window_mlp

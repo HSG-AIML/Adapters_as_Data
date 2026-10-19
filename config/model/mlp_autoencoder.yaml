@@ -1,0 +1,13 @@
+# Architecture identifier — used by the model factory to dispatch to SANEMLPAutoEncoder
+architecture: "mlp_autoencoder"
+
+input_dim: ${data.tokenizer.tokensize}  # Derived from tokenizer tokensize via Hydra interpolation
+latent_dim: 256                         # Dimension of the latent vector
+n_tokens: null                          # Number of input tokens (usually, should be equivalent to the window size)
+decoder: "symmetric"                    # If "symmetric", mirrors the encoder. Otherwise, provide an encoder-style block.
+
+encoder:
+  hidden_dims: [512]                    # Progressive dimension reduction; tune to your input size
+  expansion: 1                          # Internal expansion ratio inside each ResidualMLPBlock
+  dropout: 0.1                          # Dropout probability inside each block
+  activation: "gelu"                    # Activation function name (see get_activation_layer)

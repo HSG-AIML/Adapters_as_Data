@@ -1,0 +1,15 @@
+tokensize: 768                              # Target token size for input sequences, max 768 as this is the text embedding
+split:                                      # Proportions for train/validation/test splits
+  train: 0.7
+  val: 0.15
+  test: 0.15
+batch_size: 32                              # Batch size
+num_workers: 4                              # Number of worker processes for data loading
+drop_last: False                            # Whether to drop the last incomplete batch
+prefetch_factor: 4
+pin_memory: True
+defaults:
+  - _self_
+  - checkpoints_dataset: celeb_lora
+  - tokenizer: sparse_vector_lora
+  - tokens_dataset: single_window_small_sparse_lora
