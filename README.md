@@ -2,6 +2,9 @@
 
 This repository contains the code for the workshop paper "Adapters as Data: The Latent Space of LoRAs" for the NeurIPS 2026 Workshop on Neural Network Artifacts as a New Data Modality.
 
+<p align="center">
+    <a href="https://arxiv.org/abs/2611.07775"><img src="https://img.shields.io/badge/arXiv-2607.03551-B31B1B.svg?logo=arxiv" alt="arXiv"></a>
+</p>
 
 ## Introduction
 
